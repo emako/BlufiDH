@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard1.1;net6.0;net7.0;net8.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		<PackageId>BlufiDH</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<AssemblyVersion>1.6.3.0</AssemblyVersion>
+		<FileVersion>1.6.3.0</FileVersion>
+		<Version>$(VersionPrefix)1.6.3.0</Version>
+		<Authors>ema</Authors>
+		<Description>A fast Diffie-Hellman key exchange algorithm</Description>
+		<PackageProjectUrl>https://github.com/emako/BlufiDH</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/emako/BlufiDH</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>.NET DiffieHellman DH BLUFI</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="" />
+		<None Include="..\..\assets\logo.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+</Project>

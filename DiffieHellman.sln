@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiffieHellman.Test", "src\DiffieHellman.Test\DiffieHellman.Test.csproj", "{4BC08871-CB5D-446C-B42F-A6E021DC82F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiffieHellman", "src\DiffieHellman\DiffieHellman.csproj", "{E0F99C92-EA42-428D-B227-AA612925A050}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BC08871-CB5D-446C-B42F-A6E021DC82F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC08871-CB5D-446C-B42F-A6E021DC82F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC08871-CB5D-446C-B42F-A6E021DC82F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC08871-CB5D-446C-B42F-A6E021DC82F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0F99C92-EA42-428D-B227-AA612925A050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0F99C92-EA42-428D-B227-AA612925A050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0F99C92-EA42-428D-B227-AA612925A050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0F99C92-EA42-428D-B227-AA612925A050}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A55BD809-2436-4A62-82E9-121E5FFA28EE}
+	EndGlobalSection
+EndGlobal
