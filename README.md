@@ -76,4 +76,4 @@ a -[#DarkRed]> a: Shared key: K = B^a mod p
 @enduml
 ```
 
-![Usage](assets/DH Negotiate Security.png)
+![Usage](assets/DH%20Negotiate%20Security.png)
