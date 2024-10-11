@@ -4,15 +4,13 @@ namespace DiffieHellman.Test;
 
 internal static class Program
 {
-    private const string DH_P = "cf5cf5c38419a724957ff5dd323b9c45c3cdd261eb740f69aa94b8bb1a5c9640" +
-            "9153bd76b24222d03274e4725a5406092e9e82e9135c643cae98132b0d95f7d6" +
-            "5347c68afc1e677da90e51bbab5f5cf429c291b4ba39c6b2dc5e8c7231e46aa7" +
-            "728e87664532cdf547be20c9a3fa8342be6e34371a27c06f7dc0edddd2f86373";
-
-    private const string DH_G = "2";
-
     public static void Main()
     {
+        const string DH_P = "cf5cf5c38419a724957ff5dd323b9c45c3cdd261eb740f69aa94b8bb1a5c9640" +
+           "9153bd76b24222d03274e4725a5406092e9e82e9135c643cae98132b0d95f7d6" +
+           "5347c68afc1e677da90e51bbab5f5cf429c291b4ba39c6b2dc5e8c7231e46aa7" +
+           "728e87664532cdf547be20c9a3fa8342be6e34371a27c06f7dc0edddd2f86373";
+        const string DH_G = "2";
         const int radix = 16;
         const int dhLength = 1024;
         BigInteger dhG = BigInteger.Parse(DH_G);
