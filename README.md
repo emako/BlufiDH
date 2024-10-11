@@ -68,4 +68,4 @@ a -[#DarkRed]> a: Shared key: K = B^a mod p
 @enduml
 ```
 
-<img src="https://github.com/emako/BlufiDH/blob/master/assets/DH%20Negotiate%20Security.png?raw=true" />
+<img src="https://raw.githubusercontent.com/emako/BlufiDH/refs/heads/master/assets/DH%20Negotiate%20Security.png" />
