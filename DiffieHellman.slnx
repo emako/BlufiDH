@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/DiffieHellman.Test/DiffieHellman.Test.csproj" />
+  <Project Path="src/DiffieHellman/DiffieHellman.csproj" />
+</Solution>
