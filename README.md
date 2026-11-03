@@ -2,7 +2,7 @@
 
 # BlufiDH
 
-A fast Diffie-Hellman key exchange algorithm in `.NET Standard 1.1` and `.NET 6`.
+A fast Diffie-Hellman key exchange algorithm in `.NET Standard 1.1` / `2.0` and `.NET 6`–`.NET 10`.
 
 ## Example
 
