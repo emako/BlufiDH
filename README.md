@@ -2,11 +2,12 @@
 
 # BlufiDH
 
-A fast Diffie-Hellman key exchange algorithm in `.NET Standard 1.1` / `2.0` and `.NET 6`–`.NET 10`.
+A fast Diffie-Hellman key exchange algorithm in `.NET Standard 1.1` / `2.0` and `.NET 6` - `.NET 10`.
 
 ## Example
 
 ```c#
+// Preset DH parameters (not freshly generated each round).
 const string DH_P = "cf5cf5c38419a724957ff5dd323b9c45c3cdd261eb740f69aa94b8bb1a5c9640" +
     "9153bd76b24222d03274e4725a5406092e9e82e9135c643cae98132b0d95f7d6" +
     "5347c68afc1e677da90e51bbab5f5cf429c291b4ba39c6b2dc5e8c7231e46aa7" +
@@ -17,11 +18,12 @@ const int dhLength = 1024;
 BigInteger dhG = BigInteger.Parse(DH_G);
 BigInteger dhP = RadixBigInteger.Parse(DH_P, radix);
 
+// Each side gets a fresh random private key (a / b) and derives its public key.
 BlufiDH appDH = new(dhG, dhP, dhLength);
 BlufiDH espDH = new(dhG, dhP, dhLength);
 
-BigInteger A = appDH.GetPublicKey();
-BigInteger B = espDH.GetPublicKey();
+BigInteger A = appDH.GetPublicKey(); // A = g^a mod p
+BigInteger B = espDH.GetPublicKey(); // B = g^b mod p
 
 BigInteger keyA = appDH.GenerateSecretKey(B);
 Console.WriteLine($"APP computed key: {keyA}");
@@ -41,6 +43,8 @@ else
 
 ## DH Negotiate Security
 
+> **Note:** In the diagram, “Provide g, p” means the APP supplies the Diffie-Hellman parameters. Reference implementations (including the fixed `DH_P` / `DH_G` in the Example above) typically use preset constants rather than generating a fresh `g` and `p` each round. What is freshly randomized each negotiation is the private keys `a` and `b`.
+
 ```mermaid
 sequenceDiagram
     title DH Negotiate Security
@@ -49,7 +53,7 @@ sequenceDiagram
 
     activate APP
     rect rgb(28, 70, 50)
-        APP->>APP: Generate g, p
+        APP->>APP: Provide g, p
         APP->>APP: Private key: a
         APP->>APP: Public key: A = g^a mod p
     end
@@ -71,3 +75,4 @@ sequenceDiagram
     end
 
 ```
+
