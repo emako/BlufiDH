@@ -41,31 +41,33 @@ else
 
 ## DH Negotiate Security
 
-```startuml
-@startuml DH Negotiate Security
+```mermaid
+sequenceDiagram
+    title DH Negotiate Security
+    participant APP
+    participant ESP
 
-participant APP as a
-participant ESP as b
+    activate APP
+    rect rgb(28, 70, 50)
+        APP->>APP: Generate g, p
+        APP->>APP: Private key: a
+        APP->>APP: Public key: A = g^a mod p
+    end
+    rect rgb(30, 55, 95)
+        APP->>ESP: Send: A, g, p
+    end
 
-activate a
+    activate ESP
+    rect rgb(28, 70, 50)
+        ESP->>ESP: Private key: b
+        ESP->>ESP: Public key: B = g^b mod p
+    end
+    rect rgb(30, 55, 95)
+        ESP->>APP: Send: B
+    end
+    rect rgb(90, 40, 50)
+        ESP->>ESP: Shared key: K = A^b mod p
+        APP->>APP: Shared key: K = B^a mod p
+    end
 
-a -[#Green]> a: Generate g, p
-a -[#Green]> a: Private key: a
-a -[#Green]> a: Public key: A = g^a mod p
-a -[#Blue]> b: Send: A, g, p
-
-activate b
-
-b -[#Green]> b: Private key: b
-b -[#Green]> b: Public key: B = g^b mod p
-b -[#Blue]> a: Send: B
-b -[#DarkRed]> b: Shared key: K = A^b mod p
-
-activate a
-
-a -[#DarkRed]> a: Shared key: K = B^a mod p
-
-@enduml
 ```
-
-<img src="https://raw.githubusercontent.com/emako/BlufiDH/refs/heads/master/assets/DH%20Negotiate%20Security.png" />
